@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-      - name: Start
+      - name: Start frontend
         working-directory: client/
         run: |
           yarn install
