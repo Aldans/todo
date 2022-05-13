@@ -30,6 +30,7 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_REGISTRY_URL: https://index.docker.io/v2/
 
       - name: Build :latest
         working-directory: client/
