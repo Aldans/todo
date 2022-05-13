@@ -33,7 +33,7 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Build :latest
-        working-directory: client/
+        working-directory: server/
         run: docker build -t newtest001/backend:latest .
 
       - name: Push to docker hub :latest
