@@ -34,12 +34,12 @@ jobs:
 
       - name: Build :latest
         working-directory: client/
-        run: docker build -t frontend:latest .
+        run: docker build -t myrepo:latest .
 
       - name: Push to docker hub :latest
         uses: actions-hub/docker@master
         with:
-          args: push frontend:latest
+          args: push myrepo:latest
         
         
         
