@@ -22,8 +22,8 @@ jobs:
       - name: Start frontend test
         working-directory: client/
         run: |
-          yarn install
-          yarn test
+          npm install
+          npm test
           
       - name: Login to docker hub
         uses: actions-hub/docker/login@master
