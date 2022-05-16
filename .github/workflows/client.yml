@@ -32,7 +32,7 @@ jobs:
       
       - name: Build :latest
         working-directory: client/
-        run: docker build -t newtest001/frontend:latest .
+        run: docker build -t newtest001/client:latest .
 
       - name: Push to docker hub :latest
         uses: actions-hub/docker@master
