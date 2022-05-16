@@ -1,4 +1,4 @@
-name: Test front
+name: Test client
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Start frontend test
+      - name: == Start client test ==
         working-directory: client/
         run: |
           npm install
@@ -37,7 +37,7 @@ jobs:
       - name: Push to docker hub :latest
         uses: actions-hub/docker@master
         with:
-          args: push newtest001/frontend:latest
+          args: push newtest001/client:latest
         
         
         
