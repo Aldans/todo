@@ -1,7 +1,6 @@
-name: Test front
+name: Test server
 
 on:
-  pull_request:
   push:
     branches:
       - master
@@ -14,13 +13,12 @@ jobs:
       matrix:
         node-version: [16.15.0]
     steps:
-
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Start backend
+      - name: == Start server ==
         working-directory: server
         run: |
           npm install
@@ -33,9 +31,9 @@ jobs:
       
       - name: Build :latest
         working-directory: server/
-        run: docker build -t newtest001/backend:latest .
+        run: docker build -t newtest001/server:latest .
 
       - name: Push to docker hub :latest
         uses: actions-hub/docker@master
         with:
-          args: push newtest001/backend:latest
+          args: push newtest001/server:latest
